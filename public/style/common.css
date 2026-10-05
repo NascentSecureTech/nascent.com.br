@@ -1,0 +1,54 @@
+body {
+    padding : 0;
+    margin : 0;
+    background-color : #ffffff;
+    font-family : Helvetica,"Helvetica Neue",Arial,sans-serif;
+	
+/* font-size:16px;
+   color:#313335; */
+}
+html {
+    margin : 0;
+    padding : 0;
+}
+input {
+    font-size : 1em;
+}
+a {
+    outline : none;
+}
+p {
+    padding : 0;
+}
+img {
+    border : 0;
+}
+.wrap {
+    width : 884px;
+    margin-left : auto;
+    margin-right : auto;
+}
+.whitespace {
+    height : 12px;
+}
+.twitwhite {
+    z-index : 500;
+    overflow : hidden;
+    height : 12px;
+}
+.gaptenpx {
+    height : 10px;
+}
+.clear {
+    clear : both;
+    width : 100%;
+    height : 0;
+    overflow : hidden;
+    display : block;
+}
+div.hairline {
+    width : 100%;
+    height : 1px;
+    overflow : hidden;
+    background-color : #999b9d;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="google-site-verification" content="8lzGrcLI59XehYNpl0r9y2JUXnLwlibMHuNe_R-vQR0" />
+  <title>Nascent - Cryptographic Technology and Applications</title>
+
+  <link rel="stylesheet" href="style/common.css" type="text/css" />
+  <link rel="stylesheet" href="style/style.css?ver_0.2" type="text/css" />
+  <!--link rel="stylesheet" href="slider/css/anythingslider.css" type="text/css" media="screen" /-->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!--script type="text/javascript" src="scripts/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="slider/js/jquery.anythingslider.js" charset="utf-8"></script-->
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  <script type="text/javascript" src="js/angular-route.min.js"></script>
+  <script type="text/javascript">
+(function() {
+  var portal = angular.module( 'NascentPortal', [ 'ngRoute' ] );
+
+  portal.config( function( $routeProvider, $locationProvider ) {
+    $locationProvider.html5Mode(true);
+  
+		$routeProvider
+    	// route for the about page
+    	.when('/about', {
+    		templateUrl : 'pages/about.html',
+    	})
+    	.when('/about.php', {
+    		templateUrl : 'pages/about.html',
+    	})
+
+    	// route for the projects page
+    	.when('/projects', {
+    		templateUrl : 'pages/projects.html',
+    	})
+    	.when('/projects.php', {
+    		templateUrl : 'pages/projects.html',
+    	})
+
+    	// route for the services page
+    	.when('/services', {
+    		templateUrl : 'pages/services.html',
+    	})
+    	.when('/services.php', {
+    		templateUrl : 'pages/services.html',
+    	})
+
+    	// route for the research page
+    	.when('/research', {
+    		templateUrl : 'pages/research.html',
+    	})
+    	.when('/research.php', {
+    		templateUrl : 'pages/research.html',
+    	})
+
+    	// route for the contacts page
+    	.when('/contact', {
+    		templateUrl : 'pages/contact.html',
+    	})
+    	.when('/contact.php', {
+    		templateUrl : 'pages/contact.html',
+    	})
+
+    	// route for the home page
+    	.when('/x', {
+    		templateUrl : 'pages/main.html',
+    	})
+    	.otherwise( {
+    		templateUrl : 'pages/main.html',
+    	})
+      ;
+	});
+  
+  portal.controller( 'header', [ '$scope', '$location', function( $scope, $location ) {
+    $scope.menuItem = $location.hash;
+  } ] );
+})();
+  </script>
+</head>
+
+<body ng-app="NascentPortal">
+  <div id="header" class="inner" ng-controller="header">
+    <div class="highlight"></div>
+    <div class="upperHeader">
+      <div class="topUpperHeader" style="background: url('images/layout/header/nascent_logo.png') 0px -20px no-repeat ; height:128px;" >
+        <a href="/" title="Nascent Homepage">
+          <div style="height:128px; color: #AABBCC; position: relative; left:16px; top:40px; font-size: 76px; font-family: 'Helvetica',Verdana,sans-serif; font-weight: 600;text-shadow: 2px 2px 2px #4F73B6;">Na<span style="color:#AABBCC">sc</span>ent<br>
+            <div style=" text-align: center; color: #CCBBAA; position: absolute; top:44px; left: 4px; font-size: 20px; font-family: 'Helvetica',Verdana,sans-serif; font-weight: 600;text-shadow: 2px 2px 2px #4F73B6;">Technology Consultants</div>
+            <div style=" text-align: center; color: #EEEEEE; position: absolute; right: 36px; top: -8px; font-size: 20px; line-height:110%; font-family: 'Helvetica',Verdana,sans-serif; font-weight: 600;text-shadow: 2px 2px 2px #4F73B6;">Consultancy, Mentoring and Projects<br/>Cryptographic Technology and Applications</div>
+          </div>
+        </a>
+
+        <div class="clear"></div>
+
+        <ul class="horizontal_menu" id="topMenu" style="position: relative; left: 8px">
+          <li ng-class="( menuItem == 'home') ? 'active' :''"> <a href="/" title="Home">Home</a></li>
+          <li class="bar"></li>
+          <li  ng-class="( menuItem == 'about') ? 'active' :''"><a href="/about" title="About">About</a></li>
+          <li class="bar"></li>
+          <li ng-class="( menuItem == 'home') ? 'active' :''"><a href="/services" title="Services">Services</a></li>
+          <li class="bar"></li>
+          <li ng-class="( menuItem == 'home') ? 'active' :''"><a href="/projects" title="Projects">Projects</a></li>
+          <li class="bar"></li>
+          <li ng-class="( menuItem == 'home') ? 'active' :''"><a href="/research" title="Research">Research</a></li>
+          <li class="bar"></li>
+          <li ng-class="( menuItem == 'home') ? 'active' :''"> <a href="/contact" title="Contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div><!--!header-->
+
+  <div ng-view></div>
+
+  <div id="footer" class="footerstick">
+    <div id="footerContent">
+      <ul class="vertical_menu" id="footerMenu">
+        <li><a href="/about" title="About">About</a></li>
+        <li><a href="/services" title="Services">Services</a></li>
+        <li><a href="/projects" title="Projects">projects</a></li>
+        <li><a href="/research" title="Research">Research</a></li>
+        <li><a href="/contact" title="Contact">Contact</a></li>
+      </ul>
+      <div id="rightFooter">
+        <ul class="horizontal_menu" id="contactMenu">
+          <li><img src="images/layout/footer/phone_icon.png" height="32" width="32" alt="phone" /><span>+55-51-33154859</span></li>
+          <!--li><img src="images/layout/footer/fax_icon.png" height="32" width="32" alt="fax" /><span></span></li-->
+          <li><img src="images/layout/footer/mail_icon.png" height="32" width="32" alt="mail" /><span>
+        <a href="mailto:&#105;&#110;&#102;&#111;&#064;&#110;&#097;&#115;&#099;&#101;&#110;&#116;&#046;&#099;&#111;&#109;&#046;&#098;&#114;;">
+          &#105;&#110;&#102;&#111;&#064;&#110;&#097;&#115;&#099;&#101;&#110;&#116;&#046;&#099;&#111;&#109;&#046;&#098;&#114;</a></span></li>
+        </ul>
+        <div class="clear"></div>
+        <p id="copy"><span>Nascent Consultoria Ltda / Rua Landell de Moura, 1129 / Porto Alegre / RS 91920-150 / Brasil.</span></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
